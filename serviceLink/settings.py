@@ -19,11 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 ASGI_APPLICATION = "serviceLink.asgi.application"
 MEDIA_URL = '/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
-
+ALLOWED_HOSTS = ["*"]
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels.layers.InMemoryChannelLayer',
@@ -37,9 +36,9 @@ CHANNEL_LAYERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -147,11 +146,18 @@ WSGI_APPLICATION = 'serviceLink.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-import dj_database_url
-DATABASE_URL = os.getenv("DATABASE_URL")
+# import dj_database_url
+# DATABASE_URL = os.getenv("DATABASE_URL")
+# DATABASES = {
+#     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+# }
 DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
 
 # Add this line of code to prevent error caused by Django 40 version about trusted origins 
 # CSRF_TRUSTED_ORIGINS = ['https://proj_integ_backend.up.railway.app']
@@ -184,6 +190,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+STATIC_URL = 'static/'
 
 SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = False  # Use True in production with HTTPS
