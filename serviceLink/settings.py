@@ -154,7 +154,7 @@ DATABASES = {
 }
 
 # Add this line of code to prevent error caused by Django 40 version about trusted origins 
-CSRF_TRUSTED_ORIGINS = ['https://proj_integ_backend.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['https://proj_integ_backend.up.railway.app']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -197,3 +197,4 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
