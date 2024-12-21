@@ -115,10 +115,10 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=7),
 }
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:5173",  # Your frontend origin
-]
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOWED_ORIGINS = [
+#     "http://127.0.0.1:5173",  # Your frontend origin
+# ]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'serviceLink.urls'
