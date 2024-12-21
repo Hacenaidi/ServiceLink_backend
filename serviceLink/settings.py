@@ -82,7 +82,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 from datetime import timedelta
 
 SIMPLE_JWT = {
@@ -193,11 +192,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-STATIC_URL = 'static/'
-STATIC_ROOT = f'{BASE_DIR}\\staticfiles'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 
 SESSION_COOKIE_SAMESITE = 'Lax'
@@ -213,3 +207,12 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+STATIC_URL = '/static/'
+
+
+
+STATIC_ROOT = f'{BASE_DIR}\\staticfiles'
+print(f"STATIC_ROOT: {STATIC_ROOT}")
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

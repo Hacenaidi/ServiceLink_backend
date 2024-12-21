@@ -15,10 +15,5 @@
       "src": "/(.*)",
       "dest": "serviceLink/wsgi.py"
     }
-  ],
-  "build": {
-    "env": {
-      "DJANGO_COLLECTSTATIC": "true"
-    }
-  }
+  ]
 }
