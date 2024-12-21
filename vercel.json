@@ -9,11 +9,16 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/staticfiles/$1" 
+      "dest": "/staticfiles/$1"
     },
     {
       "src": "/(.*)",
       "dest": "serviceLink/wsgi.py"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "DJANGO_COLLECTSTATIC": "true"
+    }
+  }
 }
