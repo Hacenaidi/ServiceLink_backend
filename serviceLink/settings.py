@@ -36,7 +36,7 @@ CHANNEL_LAYERS = {
 SECRET_KEY = 'django-insecure-7fnzcdq1=0spmbqnjz(^k-b3q$)r5(xo%5*hp(c!rwg73zajzh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 
