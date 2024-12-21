@@ -118,10 +118,17 @@ SIMPLE_JWT = {
 
 #CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOWED_ORIGINS = [
-     "http://127.0.0.1:5173",  # Your frontend origin
-]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".vercel.app"]
+SECURE_SSL_REDIRECT = False
+CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'serviceLink.urls'
