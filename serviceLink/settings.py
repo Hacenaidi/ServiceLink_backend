@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     'provider',
     'service',
     'chat',
-    "whitenoise.runserver_nostatic",
+    #"whitenoise.runserver_nostatic",
 ]
 
 MIDDLEWARE = [
@@ -209,8 +209,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATIC_URL = '/static/'
-
-
 
 STATIC_ROOT = f'{BASE_DIR}\\static'
 print(f"STATIC_ROOT: {STATIC_ROOT}")
