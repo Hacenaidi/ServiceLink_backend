@@ -116,6 +116,7 @@ SIMPLE_JWT = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
 # CORS_ALLOWED_ORIGINS = [
 #     "http://127.0.0.1:5173",  # Your frontend origin
 # ]
@@ -191,6 +192,7 @@ USE_I18N = True
 
 USE_TZ = True
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = False  # Use True in production with HTTPS
