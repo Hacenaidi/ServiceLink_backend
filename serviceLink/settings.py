@@ -212,7 +212,7 @@ STATIC_URL = '/static/'
 
 
 
-STATIC_ROOT = f'{BASE_DIR}\\staticfiles'
+STATIC_ROOT = f'{BASE_DIR}\\static'
 print(f"STATIC_ROOT: {STATIC_ROOT}")
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
