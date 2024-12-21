@@ -1,18 +1,19 @@
 {
-    "builds": [{
+  "builds": [
+    {
       "src": "serviceLink/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.12.6" }
     }
-   ],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "serviceLink/wsgi.py"
-      }
-    ]
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1" 
+    },
+    {
+      "src": "/(.*)",
+      "dest": "serviceLink/wsgi.py"
+    }
+  ]
 }
